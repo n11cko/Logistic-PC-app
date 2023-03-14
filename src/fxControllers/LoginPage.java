@@ -24,6 +24,10 @@ public class LoginPage {
 
 
     public void validate() throws IOException, SQLException {
+        if (loginField.getText().isEmpty() || passwordField.getText().isEmpty()) {
+            AlertDialog.throwAlert("Login user error", "All fields are required");
+            return;
+        }
         User user = DbUtils.validateUser(loginField.getText(), passwordField.getText());
         if (user != null) {
             FXMLLoader fxmlLoader = new FXMLLoader(LoginPage.class.getResource("../view/main-page.fxml"));
