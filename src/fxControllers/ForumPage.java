@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import model.*;
+import utils.AlertDialog;
 
 public class ForumPage {
 
@@ -34,6 +35,10 @@ public class ForumPage {
 
 
     public void addNewTitlesOnForum() {
+        if (commentBody.getText().isEmpty()){
+            AlertDialog.throwAlert("Creating title error", "You cannot leave field empty");
+            return;
+        }
         Forum title = new Forum(commentBody.getText());
         System.out.println(listForum.getItems().add(title));
     }
@@ -44,6 +49,10 @@ public class ForumPage {
     }
 
     public void addComment() {
+        if (commentBody.getText().isEmpty()){
+            AlertDialog.throwAlert("Creating comment error", "You cannot leave field empty");
+            return;
+        }
         Forum selectedForum = listForum.getSelectionModel().getSelectedItem();
         if (selectedForum == null) {
             return;
