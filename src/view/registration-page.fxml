@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="466.0" prefWidth="653.0" style="-fx-background-color: #023047;"
+            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fxControllers.RegistrationPage">
+    <children>
+        <TextField fx:id="loginField" layoutX="48.0" layoutY="26.0" prefHeight="25.0" prefWidth="174.0"
+                   promptText="Your login:" stylesheets="@../css/textField.css"/>
+        <TextField fx:id="nameField" layoutX="48.0" layoutY="79.0" prefHeight="25.0" prefWidth="174.0"
+                   promptText="Name:" stylesheets="@../css/textField.css"/>
+        <TextField fx:id="surnameField" layoutX="48.0" layoutY="134.0" prefHeight="25.0" prefWidth="174.0"
+                   promptText="Surname:" stylesheets="@../css/textField.css"/>
+        <PasswordField fx:id="pswField" layoutX="48.0" layoutY="185.0" prefHeight="25.0" prefWidth="174.0"
+                       promptText="Your password:" stylesheets="@../css/textField.css"/>
+        <PasswordField fx:id="repPswField" layoutX="48.0" layoutY="240.0" prefHeight="25.0" prefWidth="174.0"
+                       promptText="Repeat your password:" stylesheets="@../css/textField.css"/>
+        <DatePicker fx:id="bDateField" layoutX="48.0" layoutY="291.0" prefHeight="25.0" prefWidth="174.0"
+                    promptText="Your birth date:" stylesheets="@../css/datePicker.css"/>
+        <TextField fx:id="managerEmailField" layoutX="343.0" layoutY="116.0" prefHeight="37.0" prefWidth="254.0"
+                   promptText="Manager e-mail" stylesheets="@../css/textField.css"/>
+        <TextField fx:id="phoneNumField" layoutX="48.0" layoutY="344.0" prefHeight="25.0" prefWidth="174.0"
+                   promptText="Enter your phone number:" stylesheets="@../css/textField.css"/>
+        <RadioButton fx:id="radioD" layoutX="340.0" layoutY="27.0" mnemonicParsing="false" onAction="#disableFields"
+                     stylesheets="@../css/radioButton.css" text="Driver">
+            <toggleGroup>
+                <ToggleGroup fx:id="userType"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="radioM" layoutX="340.0" layoutY="62.0" mnemonicParsing="false" onAction="#disableFields"
+                     stylesheets="@../css/radioButton.css" text="Manager" toggleGroup="$userType"/>
+        <CheckBox fx:id="isAdminChk" layoutX="343.0" layoutY="161.0" mnemonicParsing="false" prefHeight="21.0"
+                  prefWidth="87.0" stylesheets="@../css/checkBox.css" text="isAdmin" textFill="#d9d9d9">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </CheckBox>
+        <DatePicker fx:id="medCertField" layoutX="343.0" layoutY="203.0" prefHeight="39.0" prefWidth="254.0"
+                    promptText="Medicine certificate date:" stylesheets="@../css/datePicker.css"/>
+        <TextField fx:id="medCertNum" layoutX="343.0" layoutY="259.0" prefHeight="37.0" prefWidth="254.0"
+                   promptText="Medicine certificate number:" stylesheets="@../css/textField.css"/>
+        <TextField fx:id="driverLicenseField" layoutX="343.0" layoutY="312.0" prefHeight="37.0" prefWidth="254.0"
+                   promptText="Driver license:" stylesheets="@../css/textField.css"/>
+        <Button layoutX="194.0" layoutY="388.0" mnemonicParsing="false" onAction="#createNewUser" prefHeight="25.0"
+                prefWidth="96.0" styleClass="button_add" stylesheets="@../css/button.css" text="Create"/>
+        <Button layoutX="364.0" layoutY="388.0" mnemonicParsing="false" onAction="#returnToPrevious" prefHeight="48.0"
+                prefWidth="96.0" styleClass="button_delete" stylesheets="@../css/button.css" text="Return"/>
+    </children>
+</AnchorPane>

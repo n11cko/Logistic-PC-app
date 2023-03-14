@@ -1,0 +1,16 @@
+.date-picker .text-field {
+    -fx-font-size: 14pt;
+    -fx-text-fill: #333333;
+    -fx-background-radius: 9px;
+}
+.date-picker .date-cell:selected {
+    -fx-background-color: #007bff;
+    -fx-text-fill: #ffffff;
+}
+.date-picker .date-cell:hover {
+    -fx-background-color: #f1f1f1;
+}
+.date-picker .arrow-button {
+    -fx-background-color: #007bff;
+}
+

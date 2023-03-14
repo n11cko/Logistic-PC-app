@@ -1,0 +1,15 @@
+.list-view {
+    -fx-background-color: #fff;
+    -fx-font-size: 14px;
+    -fx-font-family: "Helvetica Neue", sans-serif;
+    -fx-background-radius: 9px;
+}
+
+.list-cell {
+    -fx-padding: 10px;
+}
+
+.list-cell:selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: #fff;
+}

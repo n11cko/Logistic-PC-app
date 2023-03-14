@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="585.0" prefWidth="1016.0" style="-fx-background-color: #023047;"
+            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fxControllers.MainPage">
+    <children>
+        <TabPane layoutX="-1.0" layoutY="47.0" prefHeight="352.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE"
+                 AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0"
+                 AnchorPane.topAnchor="47.0">
+            <tabs>
+                <Tab style="-fx-background-color: #8d99ae; -fx-font-size: 14; -fx-font-weight: bold;"
+                     text="User Management">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="1047.0">
+                            <children>
+                                <TableView fx:id="driverTable" layoutY="-5.0" prefHeight="206.0" prefWidth="1016.0"
+                                           styleClass="column-header-background" stylesheets="@../css/styles.css">
+                                    <columns>
+                                        <TableColumn fx:id="driverId" prefWidth="56.0" text="id"/>
+                                        <TableColumn fx:id="driverLogin" prefWidth="109.0" text="login"/>
+                                        <TableColumn fx:id="driverName" prefWidth="114.0" text="name"/>
+                                        <TableColumn fx:id="driverSurname" prefWidth="100.0" text="surname"/>
+                                        <TableColumn fx:id="driverBirthDate" prefWidth="114.0" text="birth date"/>
+                                        <TableColumn fx:id="driverMedDate" prefWidth="108.0"
+                                                     text="med. certificate date"/>
+                                        <TableColumn fx:id="driverMedNum" prefWidth="117.0" text="med. number"/>
+                                        <TableColumn fx:id="driverLicense" prefWidth="116.0" text="driver license"/>
+                                        <TableColumn fx:id="driverPhoneNum" prefWidth="181.0" text="phone number"/>
+                                    </columns>
+                                </TableView>
+                                <TableView fx:id="managerTable" layoutY="274.0" prefHeight="234.0" prefWidth="1016.0"
+                                           stylesheets="@../css/styles.css">
+                                    <columns>
+                                        <TableColumn fx:id="managerId" prefWidth="59.0" text="id"/>
+                                        <TableColumn fx:id="managerLogin" prefWidth="108.0" text="login"/>
+                                        <TableColumn fx:id="managerName" prefWidth="139.0" text="name"/>
+                                        <TableColumn fx:id="managerSurname" prefWidth="137.0" text="surname"/>
+                                        <TableColumn fx:id="managerBirthDate" prefWidth="118.0" text="birth date"/>
+                                        <TableColumn fx:id="managerEmail" minWidth="9.0" prefWidth="142.0"
+                                                     text="email"/>
+                                        <TableColumn fx:id="managerEmploymentDate" prefWidth="155.0"
+                                                     text="employment date"/>
+                                        <TableColumn fx:id="managerPhoneNumber" prefWidth="157.0" text="phone number"/>
+                                    </columns>
+                                </TableView>
+                                <Pane layoutY="200.0" prefHeight="82.0" prefWidth="1016.0"
+                                      style="-fx-background-color: #023047;">
+                                    <children>
+                                        <Label layoutX="49.0" layoutY="2.0" styleClass="text"
+                                               stylesheets="@../css/styles.css" text="Phone number" textFill="#75cd4d">
+                                            <font>
+                                                <Font name="Calibri Bold" size="21.0"/>
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="changePhoneNumberTextField" layoutX="20.0" layoutY="22.0"
+                                                   prefHeight="25.0" prefWidth="168.0" styleClass="text-field"
+                                                   stylesheets="@../css/textField.css"/>
+                                        <Label layoutX="276.0" layoutY="2.0" styleClass="text"
+                                               stylesheets="@../css/styles.css" text="Surname" textFill="#75cd4d">
+                                            <font>
+                                                <Font name="Calibri Bold" size="21.0"/>
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="changeSurnameTextField" layoutX="222.0" layoutY="22.0"
+                                                   prefHeight="25.0" prefWidth="175.0"
+                                                   stylesheets="@../css/textField.css"/>
+                                        <Button fx:id="btnAddUserTableInfo" layoutX="486.0" layoutY="17.0"
+                                                mnemonicParsing="false" onAction="#AddUserToTableViewForUser"
+                                                prefHeight="42.0" prefWidth="155.0" styleClass="button_add"
+                                                stylesheets="@../css/button.css" text="Add" textFill="#282827">
+                                            <font>
+                                                <Font name="Calibri" size="26.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="btnUpdateUserTableInfo" layoutX="668.0" layoutY="17.0"
+                                                mnemonicParsing="false" onAction="#UpdateTableViewForUser"
+                                                prefHeight="45.0" prefWidth="155.0" styleClass="button_update"
+                                                stylesheets="@../css/button.css" text="Update" textFill="#282827">
+                                            <font>
+                                                <Font size="26.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="btnDeleteUserTableInfo" layoutX="851.0" layoutY="17.0"
+                                                mnemonicParsing="false" onAction="#deleteTableViewForUser"
+                                                prefHeight="48.0" prefWidth="155.0" styleClass="button_delete"
+                                                stylesheets="@../css/button.css" text="Delete"/>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab style="-fx-background-color: #8d99ae; -fx-font-size: 14; -fx-font-weight: bold;"
+                     text="Cargo Management">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="cargoWeightField" layoutX="92.0" layoutY="90.0" prefHeight="37.0"
+                                           prefWidth="199.0" promptText="Enter amount of cargo(kg):"
+                                           stylesheets="@../css/textField.css"/>
+                                <ComboBox fx:id="cargoTypeField" layoutX="93.0" layoutY="142.0" prefHeight="41.0"
+                                          prefWidth="197.0" promptText="Choose type of cargo:"
+                                          stylesheets="@../css/comboBox.css"/>
+                                <TextField fx:id="cargoDescriptionField" layoutX="93.0" layoutY="202.0"
+                                           prefHeight="37.0" prefWidth="199.0" promptText="Description:"
+                                           stylesheets="@../css/textField.css"/>
+                                <Button layoutX="14.0" layoutY="420.0" mnemonicParsing="false" onAction="#createCargo"
+                                        prefHeight="48.0" prefWidth="110.0" styleClass="button_add"
+                                        stylesheets="@../css/button.css" text="Add"/>
+                                <Button layoutX="272.0" layoutY="420.0" mnemonicParsing="false" onAction="#removeCargo"
+                                        prefHeight="42.0" prefWidth="109.0" styleClass="button_delete"
+                                        stylesheets="@../css/button.css" text="Delete"/>
+                                <TextField fx:id="cargoTitleField" layoutX="90.0" layoutY="34.0" prefHeight="37.0"
+                                           prefWidth="200.0" promptText="Title:" stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="cargoCustomerField" layoutX="91.0" layoutY="254.0" prefHeight="37.0"
+                                           prefWidth="200.0" promptText="Customer:"
+                                           stylesheets="@../css/textField.css"/>
+                                <ListView fx:id="cargoListField" layoutX="381.0" layoutY="52.0" prefHeight="355.0"
+                                          prefWidth="612.0" styleClass="list-cell" stylesheets="@../css/listView.css"/>
+                                <Label layoutX="381.0" layoutY="39.0" prefHeight="25.0" prefWidth="285.0"
+                                       style="-fx-background-color: white;" stylesheets="@../css/styles.css"
+                                       text="Cargo owned:"/>
+                                <Button layoutX="142.0" layoutY="420.0" mnemonicParsing="false" onAction="#updateCargo"
+                                        styleClass="button_update" stylesheets="@../css/button.css" text="Update"/>
+                                <DatePicker fx:id="cargoCreationDate" layoutX="92.0" layoutY="306.0" prefHeight="39.0"
+                                            prefWidth="202.0" promptText="Date of creation:"
+                                            stylesheets="@../css/datePicker.css"/>
+                                <DatePicker fx:id="cargoUpdateDate" layoutX="91.0" layoutY="361.0" prefHeight="39.0"
+                                            prefWidth="204.0" promptText="Update date:"
+                                            stylesheets="@../css/datePicker.css"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab style="-fx-background-color: #8d99ae; -fx-font-size: 14; -fx-font-weight: bold;"
+                     text="Truck Management">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="makeField" layoutX="404.0" layoutY="54.0" promptText="Enter make:"
+                                           stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="modelField" layoutX="404.0" layoutY="121.0" promptText="Enter model:"
+                                           stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="yearField" layoutX="404.0" layoutY="191.0" promptText="Enter year:"
+                                           stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="odometerField" layoutX="850.0" layoutY="54.0" prefHeight="37.0"
+                                           prefWidth="64.0" promptText="km" stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="tankCapacityField" layoutX="851.0" layoutY="127.0" prefHeight="37.0"
+                                           prefWidth="63.0" promptText="litres" stylesheets="@../css/textField.css"/>
+                                <ComboBox fx:id="tyreTypeField" layoutX="696.0" layoutY="194.0" prefHeight="30.0"
+                                          prefWidth="218.0" stylesheets="@../css/comboBox.css"/>
+                                <ListView fx:id="truckListField" layoutX="20.0" layoutY="57.0" prefHeight="401.0"
+                                          prefWidth="314.0" stylesheets="@../css/listView.css"/>
+                                <Label layoutX="20.0" layoutY="42.0" prefHeight="25.0" prefWidth="219.0"
+                                       style="-fx-background-color: white;" stylesheets="@../css/styles.css"
+                                       text="Company owned trucks"/>
+                                <Label layoutX="696.0" layoutY="60.0" prefHeight="25.0" prefWidth="102.0"
+                                       style="-fx-background-color: white;" stylesheets="@../css/styles.css"
+                                       text=" Odometer"/>
+                                <Label layoutX="696.0" layoutY="133.0" style="-fx-background-color: white;"
+                                       stylesheets="@../css/styles.css" text="Fuel tank capacity"/>
+                                <Button layoutX="404.0" layoutY="267.0" mnemonicParsing="false" onAction="#createTruck"
+                                        prefHeight="45.0" prefWidth="125.0" styleClass="button_add"
+                                        stylesheets="@../css/button.css" text="Add"/>
+                                <Button layoutX="608.0" layoutY="267.0" mnemonicParsing="false" onAction="#updateTruck"
+                                        prefHeight="48.0" prefWidth="120.0" styleClass="button_update"
+                                        stylesheets="@../css/button.css" text="Update"/>
+                                <Button layoutX="798.0" layoutY="267.0" mnemonicParsing="false"
+                                        onMouseClicked="#removeTruck" prefHeight="48.0" prefWidth="125.0"
+                                        styleClass="button_delete" stylesheets="@../css/button.css" text="Delete"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab style="-fx-background-color: #8d99ae; -fx-font-size: 14; -fx-font-weight: bold;"
+                     text="Destination Management">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="506.0" prefWidth="1004.0">
+                            <children>
+                                <TextField fx:id="stCityField" layoutX="39.0" layoutY="39.0"
+                                           promptText="Enter your start city:" stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="stLnField" layoutX="39.0" layoutY="94.0" promptText="Start longitude:"
+                                           stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="stLtField" layoutX="39.0" layoutY="150.0" promptText="Start latitude:"
+                                           stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="endCityField" layoutX="39.0" layoutY="209.0"
+                                           promptText="Enter your destination city:"
+                                           stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="endLnField" layoutX="39.0" layoutY="263.0" promptText="End longitude:"
+                                           stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="endLtField" layoutX="39.0" layoutY="314.0" promptText="End latitude:"
+                                           stylesheets="@../css/textField.css"/>
+                                <TextField fx:id="checkpointField" layoutX="688.0" layoutY="39.0" prefHeight="37.0"
+                                           prefWidth="208.0" promptText="Checkpoint city:"
+                                           stylesheets="@../css/textField.css"/>
+                                <RadioButton fx:id="radioShortStop" layoutX="642.0" layoutY="88.0"
+                                             mnemonicParsing="false" prefHeight="35.0" prefWidth="128.0"
+                                             stylesheets="@../css/radioButton.css" text="Short stop">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="typeOfCheckpoint"/>
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="radioLongStop" layoutX="816.0" layoutY="88.0"
+                                             mnemonicParsing="false" stylesheets="@../css/radioButton.css"
+                                             text="Long stop" toggleGroup="$typeOfCheckpoint"/>
+                                <ComboBox fx:id="respManagerOfDestField" layoutX="688.0" layoutY="178.0"
+                                          prefHeight="35.0" prefWidth="210.0" promptText="Responsible manager:"
+                                          stylesheets="@../css/comboBox.css"/>
+                                <Button layoutX="5.0" layoutY="415.0" mnemonicParsing="false" onAction="#createRoute"
+                                        prefHeight="48.0" prefWidth="102.0" styleClass="button_add"
+                                        stylesheets="@../css/button.css" text="Add"/>
+                                <Button layoutX="590.0" layoutY="227.0" mnemonicParsing="false"
+                                        onAction="#addCheckpoint" prefHeight="54.0" prefWidth="135.0"
+                                        styleClass="button_add_checkpoint" stylesheets="@../css/button.css"
+                                        text="Add checkpoint">
+                                    <font>
+                                        <Font size="11.0"/>
+                                    </font>
+                                </Button>
+                                <ListView fx:id="destinationListField" layoutX="296.0" layoutY="45.0" prefHeight="352.0"
+                                          prefWidth="287.0" stylesheets="@../css/listView.css"/>
+                                <ListView fx:id="checkpointListField" layoutX="590.0" layoutY="301.0" prefHeight="192.0"
+                                          prefWidth="417.0" stylesheets="@../css/listView.css"/>
+                                <Label layoutX="296.0" layoutY="32.0" prefHeight="25.0" prefWidth="170.0"
+                                       style="-fx-background-color: WHITE;" stylesheets="@../css/styles.css"
+                                       text="Destination"/>
+                                <Label layoutX="590.0" layoutY="289.0" prefHeight="25.0" prefWidth="138.0"
+                                       style="-fx-background-color: WHITE;" stylesheets="@../css/styles.css"
+                                       text="Checkpoints"/>
+                                <Button layoutX="239.0" layoutY="415.0" mnemonicParsing="false" onAction="#deleteRoute"
+                                        prefHeight="48.0" prefWidth="102.0" styleClass="button_delete"
+                                        stylesheets="@../css/button.css" text="Delete"/>
+                                <Button layoutX="858.0" layoutY="227.0" mnemonicParsing="false"
+                                        onAction="#deleteCheckpoint" prefHeight="54.0" prefWidth="144.0"
+                                        styleClass="button_delete_checkpoint" stylesheets="@../css/button.css"
+                                        text="Delete checkpoint"/>
+                                <Button layoutX="118.0" layoutY="415.0" mnemonicParsing="false" onAction="#updateRoute"
+                                        prefHeight="43.0" prefWidth="102.0" styleClass="button_update"
+                                        stylesheets="@../css/button.css" text="Update"/>
+                                <Button layoutX="742.0" layoutY="228.0" mnemonicParsing="false"
+                                        onAction="#updateCheckpoint" prefHeight="53.0" prefWidth="102.0"
+                                        styleClass="button_update" stylesheets="@../css/button.css" text="Update"/>
+                                <DatePicker fx:id="checkpointDate" layoutX="708.0" layoutY="123.0" prefHeight="39.0"
+                                            prefWidth="169.0" promptText="End of the stop"
+                                            stylesheets="@../css/datePicker.css"/>
+                                <DatePicker fx:id="dateCreated" layoutX="5.0" layoutY="364.0" prefHeight="39.0"
+                                            prefWidth="138.0" promptText="Start of the stop"
+                                            stylesheets="@../css/datePicker.css"/>
+                                <DatePicker fx:id="dateUpdated" layoutX="156.0" layoutY="364.0" prefHeight="39.0"
+                                            prefWidth="129.0" promptText="Update date"
+                                            stylesheets="@../css/datePicker.css"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="forumButton" layoutX="7.0" layoutY="6.0" mnemonicParsing="false" onAction="#goToForum"
+                prefHeight="34.0" prefWidth="102.0" styleClass="button1" stylesheets="@../css/styles.css" text="Forum"/>
+    </children>
+</AnchorPane>

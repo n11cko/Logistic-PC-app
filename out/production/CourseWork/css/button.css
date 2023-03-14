@@ -1,0 +1,61 @@
+.button_add {
+    -fx-background-color: #005f73;
+    -fx-text-fill: #e5e5e5;
+    -fx-font-size: 19px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 9px;
+}
+
+.button_add_checkpoint {
+    -fx-background-color: #005f73;
+    -fx-text-fill: #e5e5e5;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 9px;
+}
+
+
+.button_update {
+    -fx-background-color: #e9d8a6;
+    -fx-text-fill: #370617;
+    -fx-font-size: 19px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 9px;
+}
+
+.button_delete {
+    -fx-background-color: #bc4749;
+    -fx-text-fill: #000814;
+    -fx-font-size: 19px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 9px;
+}
+
+.button_delete_checkpoint {
+    -fx-background-color: #bc4749;
+    -fx-text-fill: #000814;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 9px;
+}
+
+.button_login {
+    -fx-background-color: #007bff;
+    -fx-text-fill: #e9d8a6;
+    -fx-background-radius: 9px;
+}
+
+.button_signUp {
+    -fx-background-color: #52796f;
+    -fx-text-fill: #e9d8a6;
+    -fx-background-radius: 9px;
+}
+
+.button:pressed {
+    -fx-background-color: #0A7E36;
+}

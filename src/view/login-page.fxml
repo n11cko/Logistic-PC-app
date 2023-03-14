@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="205.0" prefWidth="269.0" style="-fx-background-color: #023047;"
+            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fxControllers.LoginPage">
+    <children>
+        <TextField fx:id="loginField" layoutX="23.0" layoutY="43.0" promptText="Enter your login:"
+                   stylesheets="@../css/textField.css"/>
+        <PasswordField fx:id="passwordField" layoutX="23.0" layoutY="100.0" promptText="Enter your password:"
+                       stylesheets="@../css/textField.css"/>
+        <Button layoutX="23.0" layoutY="152.0" mnemonicParsing="false" onAction="#validate" prefHeight="31.0"
+                prefWidth="84.0" styleClass="button_login" stylesheets="@../css/button.css" text="Login"/>
+        <Button layoutX="161.0" layoutY="152.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0"
+                prefWidth="84.0" styleClass="button_signUp" stylesheets="@../css/button.css" text="Sign Up"/>
+        <Label layoutX="92.0" layoutY="8.0" stylesheets="@../css/styles.css" text="Login page" textFill="#f8f6f6"/>
+    </children>
+</AnchorPane>

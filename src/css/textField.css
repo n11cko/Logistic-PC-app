@@ -1,0 +1,12 @@
+.text-field {
+    -fx-background-color: #fff;
+    -fx-border-radius: 5px;
+    -fx-font-size: 18px;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 9px;
+}
+
+.text-field:focused {
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2px;
+}

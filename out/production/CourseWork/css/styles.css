@@ -1,0 +1,93 @@
+.button1 {
+    -fx-background-color: #264653;
+    -fx-background-radius: 14px;
+    -fx-text-fill: white;
+
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0, 0, 1);
+    -fx-cursor: hand;
+}
+
+.table-view {
+    -fx-background-color: #fefef0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #6ec59c;
+}
+
+.table-view .column-header,
+.table-view .table-cell {
+    -fx-alignment: center-left;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #6ec59c;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2px;
+    -fx-padding: 5px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
+
+.button_add {
+    -fx-background-color: #2a9d8f;
+    -fx-text-fill: #fff;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 20px;
+    -fx-background-insets: 0px;
+}
+
+.button_add:hover {
+    -fx-background-color: #8d99ae;
+}
+
+.button_add:pressed {
+    -fx-background-color: #e76f51;
+}
+
+.button_update {
+    -fx-background-color: #e9c46a;
+    -fx-text-fill: #fff;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 20px;
+}
+
+.button_update:hover {
+    -fx-background-color: #8d99ae;
+}
+
+.button_update:pressed {
+    -fx-background-color: #0A7E36;
+}
+
+.text {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #faedcd;
+    -fx-font-family: "Helvetica Neue", sans-serif;
+    -fx-background-radius: 9px;
+}
+
+.tab {
+    -fx-background-color: #ECEFF1;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-text-fill: #333;
+}
+
+.tab:selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: #fff;
+}
+
+
