@@ -55,13 +55,16 @@ public class RegistrationPage implements Initializable {
     }
 
     public void createNewUser() throws IOException, SQLException {
+        if (loginField.getText().isEmpty() || nameField.getText().isEmpty() || surnameField.getText().isEmpty() || pswField.getText().isEmpty() || repPswField.getText().isEmpty() || bDateField.getValue() == null || phoneNumField.getText().isEmpty()) {
+            AlertDialog.throwAlert("Create user error", "All fields are required");
+            return;
+        }
+
         Connection connection = DbUtils.connectToBd();
         if (checkUserExistance(connection)) return;
         String insertDriver = "INSERT INTO drivers(`login`,`password`, `name`, `surname`, `birth_date`, `med_date`, `med_num`,`driver_license`, `phone_num`) VALUES (?,?,?,?,?,?,?,?,?)";
         String insertManager = "INSERT INTO managers(`login`,`password`, `name`, `surname`, `birth_date`, `phone_num`, `email`, `employment_date`, `is_admin`) VALUES (?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement;
-
-
         if (radioD.isSelected()) {
             preparedStatement = connection.prepareStatement(insertDriver);
             Driver driver = new Driver(loginField.getText(), pswField.getText(), nameField.getText(), surnameField.getText(), LocalDate.parse(bDateField.getValue().toString()), phoneNumField.getText(), LocalDate.parse(medCertField.getValue().toString()), medCertNum.getText(), driverLicenseField.getText());
