@@ -154,8 +154,19 @@ public class MainPage implements Initializable {
 
     public void createTruck() {
         System.out.println(loggedUser);
-        Truck truck = new Truck(makeField.getText(), modelField.getText(), Integer.parseInt(yearField.getText()), Double.parseDouble(odometerField.getText()), Double.parseDouble(tankCapacityField.getText()), tyreTypeField.getValue());
-        System.out.println(truckListField.getItems().add(truck));
+        if (makeField.getText().isEmpty() || modelField.getText().isEmpty() || yearField.getText().isEmpty() || odometerField.getText().isEmpty() || tankCapacityField.getText().isEmpty()) {
+            AlertDialog.throwAlert("Creating truck error", "You cannot leave field empty");
+            return;
+        }
+        try{
+            int year = Integer.parseInt(yearField.getText());
+            double odometer = Double.parseDouble(odometerField.getText());
+            double tankCapacity = Double.parseDouble(tankCapacityField.getText());
+            Truck truck = new Truck(makeField.getText(), modelField.getText(), year, odometer, tankCapacity, tyreTypeField.getValue());
+            System.out.println(truckListField.getItems().add(truck));
+        } catch (NumberFormatException e) {
+            AlertDialog.throwAlert("Invalid year/odometer/tank capacity input", "Please enter a valid weight value.");
+        }
     }
 
 
@@ -234,8 +245,17 @@ public class MainPage implements Initializable {
 
 
     public void createCargo() {
-        Cargo cargo = new Cargo(cargoTitleField.getText(), Double.parseDouble(cargoWeightField.getText()), cargoTypeField.getValue(), cargoDescriptionField.getText(), cargoCustomerField.getText(), cargoCreationDate.getValue(), cargoUpdateDate.getValue());
-        System.out.println(cargoListField.getItems().add(cargo));
+        if (cargoTitleField.getText().isEmpty() || cargoWeightField.getText().isEmpty() || cargoDescriptionField.getText().isEmpty() || cargoCustomerField.getText().isEmpty() || cargoCreationDate.getValue() == null || cargoUpdateDate.getValue() == null) {
+            AlertDialog.throwAlert("Creating cargo error", "You cannot leave field empty");
+            return;
+        }
+        try {
+            double weight = Double.parseDouble(cargoWeightField.getText());
+            Cargo cargo = new Cargo(cargoTitleField.getText(), weight, cargoTypeField.getValue(), cargoDescriptionField.getText(), cargoCustomerField.getText(), cargoCreationDate.getValue(), cargoUpdateDate.getValue());
+            System.out.println(cargoListField.getItems().add(cargo));
+        } catch (NumberFormatException e) {
+            AlertDialog.throwAlert("Invalid weight input", "Please enter a valid weight value.");
+        }
     }
 
     public void removeCargo() {
@@ -274,8 +294,21 @@ public class MainPage implements Initializable {
     }
 
     public void createRoute() {
-        Destination destination = new Destination(stCityField.getText(), Long.parseLong(stLnField.getText()), Long.parseLong(stLtField.getText()), endCityField.getText(), Long.parseLong(endLnField.getText()), Long.parseLong(endLtField.getText()), dateCreated.getValue(), dateUpdated.getValue(), checkpointField.getText(), TemporaryManagerType.MANAGER_1);
-        System.out.println(destinationListField.getItems().add(destination));
+        if (stCityField.getText().isEmpty() || stLnField.getText().isEmpty() || stLtField.getText().isEmpty() || endCityField.getText().isEmpty() || endLnField.getText().isEmpty() || endLtField.getText().isEmpty() || dateCreated.getValue()==null || dateUpdated.getValue()==null){
+            AlertDialog.throwAlert("Creating route error", "You cannot leave field empty");
+            return;
+        }
+        try{
+            long stLn = Long.parseLong(stLnField.getText());
+            long stLt = Long.parseLong(stLtField.getText());
+            long endLn = Long.parseLong(endLnField.getText());
+            long endLt = Long.parseLong(endLtField.getText());
+            Destination destination = new Destination(stCityField.getText(), stLn, stLt, endCityField.getText(), endLn, endLt, dateCreated.getValue(), dateUpdated.getValue(), checkpointField.getText(), TemporaryManagerType.MANAGER_1);
+            System.out.println(destinationListField.getItems().add(destination));
+        } catch (NumberFormatException e) {
+            AlertDialog.throwAlert("Invalid longitude/latitude input", "Please enter a valid weight value.");
+        }
+
     }
 
     public void deleteRoute() {
@@ -304,6 +337,10 @@ public class MainPage implements Initializable {
     }
 
     public void addCheckpoint() {
+        if (checkpointField.getText().isEmpty() || checkpointDate.getValue()==null){
+            AlertDialog.throwAlert("Creating route error", "You cannot leave field empty");
+            return;
+        }
         ObservableList<Destination> currentTableData = destinationListField.getSelectionModel().getSelectedItems();
         checkpointField.getText();
         Checkpoint checkpoint = new Checkpoint(checkpointField.getText(), radioLongStop.isSelected(), checkpointDate.getValue(), respManagerOfDestField.getValue());
