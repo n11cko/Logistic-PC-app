@@ -30,4 +30,21 @@ public class AlertDialog {
         }
     }
 
+    public static <T> void updateItem(TableView<T> tableView, T selectedItem, String title, Node content, Runnable onSuccess){
+        int selectedIndex = tableView.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            Dialog<T> dialog = new Dialog<>();
+            dialog.setTitle(title);
+            dialog.getDialogPane().setContent(content);
+            ButtonType updateButton = new ButtonType("Update", ButtonBar.ButtonData.OK_DONE);
+            dialog.getDialogPane().getButtonTypes().addAll(updateButton, ButtonType.CANCEL);
+            Optional<T> result = dialog.showAndWait();
+            if (result.isPresent()) {
+                onSuccess.run();
+                tableView.getItems().set(selectedIndex, selectedItem);
+            }
+        }
+    }
+
+
 }

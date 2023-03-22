@@ -16,9 +16,17 @@ public class Checkpoint {
     private int id;
     private String title;
     private boolean longStop;
+    private Manager manager;
     private TemporaryManagerType temporaryManagerType;
     private LocalDate dateArrived;
     private ObservableList<Destination> linkedDestinations;
+
+    public Checkpoint(String title, boolean longStop, LocalDate dateArrived, Manager manager) {
+        this.title = title;
+        this.longStop = longStop;
+        this.dateArrived=dateArrived;
+        this.manager = manager;
+    }
 
     public String toString() {
         if(!longStop){

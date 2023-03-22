@@ -5,6 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -13,9 +17,13 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Manager extends User implements Serializable {
+
     private String email;
     private LocalDate employmentDate;
     private boolean isAdmin;
+    public String toString() {
+        return getLogin();
+    }
 
     public boolean isAdmin() {
         return isAdmin;

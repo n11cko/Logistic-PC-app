@@ -22,6 +22,7 @@ public class Truck {
         return "Make:  " + make + "  Model:  " + model + "  Year:  " + year + "  Odometer:  " + odometer + "  Fuel capacity:  " + fuelTankCapacity + "  Tyre type:  " + tyreType;
     }
 
+
     public Truck(String make, String model, int year, double odometer, double fuelTankCapacity, TyreType tyreType) {
         this.make = make;
         this.model = model;
